@@ -2,7 +2,7 @@ import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 import add from "date-fns/add";
 import differenceInMonths from "date-fns/differenceInMonths";
-import isBefore from "date-fns/isBefore";
+import differenceInDays from "date-fns/differenceInDays";
 
 import { DateTimeService } from "./date-time-service";
 
@@ -27,6 +27,6 @@ export const DateFnsService: DateTimeService = class {
   }
 
   static compareInstances() {
-    return isBefore(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE_);
+    return differenceInDays(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE_) < 0;
   }
 };

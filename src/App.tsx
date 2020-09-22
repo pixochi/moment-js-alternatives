@@ -12,17 +12,17 @@ function App() {
     const luxonStats = dateTimeServiceStats(LuxonService);
     console.log({ luxonStats });
 
-    // const dateFnsStats = dateTimeServiceStats(DateFnsService);
-    // console.log({ dateFnsStats });
+    const dateFnsStats = dateTimeServiceStats(DateFnsService);
+    console.log({ dateFnsStats });
 
-    // const dayJsStats = dateTimeServiceStats(DayJsService);
-    // console.log({ dayJsStats });
+    const dayJsStats = dateTimeServiceStats(DayJsService);
+    console.log({ dayJsStats });
 
-    // const jsJodaStats = dateTimeServiceStats(JsJodaService);
-    // console.log({ jsJodaStats });
+    const jsJodaStats = dateTimeServiceStats(JsJodaService);
+    console.log({ jsJodaStats });
 
-    // const momentStats = dateTimeServiceStats(MomentService);
-    // console.log({ momentStats });
+    const momentStats = dateTimeServiceStats(MomentService);
+    console.log({ momentStats });
   }, []);
 
   return <div>LUXON</div>;

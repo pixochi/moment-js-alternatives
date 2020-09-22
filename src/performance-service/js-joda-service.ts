@@ -16,7 +16,7 @@ export const JsJodaService: DateTimeService = class {
   }
 
   static formatInstance() {
-    DATE_TIME_INSTANCE.format(DateTimeFormatter.ofPattern("yyyy-M-d")); // 4/28/2018
+    DATE_TIME_INSTANCE.format(DateTimeFormatter.ofPattern("yyyy-M-d")); 
   }
 
   static tranformInstance() {
@@ -24,7 +24,7 @@ export const JsJodaService: DateTimeService = class {
   }
 
   static diffBetweenInstances() {
-    DATE_TIME_INSTANCE.until(ANOTHER_DATE_TIME_INSTANCE, ChronoUnit.YEARS);
+    DATE_TIME_INSTANCE.until(ANOTHER_DATE_TIME_INSTANCE, ChronoUnit.MONTHS);
   }
 
   static compareInstances() {
