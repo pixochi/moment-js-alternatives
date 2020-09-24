@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc"; // dependent on utc plugin
 import timezone from "dayjs/plugin/timezone";
+import "dayjs/locale/en-nz"; // load on demand
 
 import { DateTimeService } from "./date-time-service";
 import * as Constants from "./constants";
@@ -35,5 +36,9 @@ export const DayJsService: DateTimeService = class {
 
   static timezone() {
     dayjs(Constants.DATE_TIME_ISO).tz(Constants.TIMEZONE);
+  }
+
+  static setGlobalLocale() {
+    dayjs.locale("en-nz");
   }
 };

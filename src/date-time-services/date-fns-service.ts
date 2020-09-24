@@ -37,4 +37,9 @@ export const DateFnsService: DateTimeService = class {
   static timezone() {
     zonedTimeToUtc(Constants.DATE_TIME_ISO, Constants.TIMEZONE);
   }
+
+  static setGlobalLocale() {
+    // Not supported
+    // https://date-fns.org/v2.16.1/docs/I18n
+  }
 };

@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import luxon, { DateTime, Settings } from "luxon";
 
 import { DateTimeService } from "./date-time-service";
 import * as Constants from "./constants";
@@ -34,5 +34,9 @@ export const LuxonService: DateTimeService = class {
 
   static timezone() {
     DateTime.fromISO(Constants.DATE_TIME_ISO).setZone(Constants.TIMEZONE);
+  }
+
+  static setGlobalLocale() {
+    Settings.defaultLocale = "en-nz";
   }
 };

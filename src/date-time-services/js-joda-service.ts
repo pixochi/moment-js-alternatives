@@ -49,4 +49,9 @@ export const JsJodaService: DateTimeService = class {
       ZoneId.of(Constants.TIMEZONE)
     );
   }
+
+  static setGlobalLocale() {
+    // Not supported
+    // https://js-joda.github.io/js-joda/manual/formatting.html
+  }
 };

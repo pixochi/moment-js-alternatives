@@ -31,4 +31,8 @@ export const MomentService: DateTimeService = class {
   static timezone() {
     moment(Constants.DATE_TIME_ISO).tz(Constants.TIMEZONE);
   }
+
+  static setGlobalLocale() {
+    moment.locale("en-nz");
+  }
 };
