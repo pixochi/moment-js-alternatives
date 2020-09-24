@@ -1,13 +1,15 @@
 import moment from "moment-timezone";
 
 import { DateTimeService } from "./date-time-service";
+import * as Constants from "./constants";
 
-const DATE_TIME_INSTANCE = moment("2016-05-25T09:24:15");
-const ANOTHER_DATE_TIME_INSTANCE_ = moment("2017-08-22T15:23:00");
+const DATE_TIME_INSTANCE = moment(Constants.DATE_TIME_ISO);
+
+const ANOTHER_DATE_TIME_INSTANCE_ = moment(Constants.ANOTHER_DATE_TIME_ISO);
 
 export const MomentService: DateTimeService = class {
   static parseISO() {
-    moment("2016-05-25T09:24:15");
+    moment(Constants.DATE_TIME_ISO);
   }
 
   static formatInstance() {
@@ -24,5 +26,9 @@ export const MomentService: DateTimeService = class {
 
   static compareInstances() {
     return DATE_TIME_INSTANCE.isBefore(ANOTHER_DATE_TIME_INSTANCE_, "days");
+  }
+
+  static timezone() {
+    moment(Constants.DATE_TIME_ISO).tz(Constants.TIMEZONE);
   }
 };

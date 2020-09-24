@@ -3,20 +3,25 @@ import {
   DateTimeFormatter,
   LocalDateTime,
   Period,
+  ZoneId,
 } from "@js-joda/core";
+import "@js-joda/timezone"; // Automatically adds timezone support
 
 import { DateTimeService } from "./date-time-service";
+import * as Constants from "./constants";
 
-const DATE_TIME_INSTANCE = LocalDateTime.parse("2016-05-25T09:24:15");
-const ANOTHER_DATE_TIME_INSTANCE = LocalDateTime.parse("2017-08-22T15:23:00");
+const DATE_TIME_INSTANCE = LocalDateTime.parse(Constants.DATE_TIME_ISO);
+const ANOTHER_DATE_TIME_INSTANCE = LocalDateTime.parse(
+  Constants.ANOTHER_DATE_TIME_ISO
+);
 
 export const JsJodaService: DateTimeService = class {
   static parseISO() {
-    LocalDateTime.parse("2016-05-25T09:24:15");
+    LocalDateTime.parse(Constants.DATE_TIME_ISO);
   }
 
   static formatInstance() {
-    DATE_TIME_INSTANCE.format(DateTimeFormatter.ofPattern("yyyy-M-d")); 
+    DATE_TIME_INSTANCE.format(DateTimeFormatter.ofPattern("yyyy-M-d"));
   }
 
   static tranformInstance() {
@@ -28,7 +33,7 @@ export const JsJodaService: DateTimeService = class {
   }
 
   static compareInstances() {
-    // isBefore in days
+    // `isBefore` in days
     return (
       Math.abs(
         Period.between(
@@ -36,6 +41,12 @@ export const JsJodaService: DateTimeService = class {
           ANOTHER_DATE_TIME_INSTANCE.toLocalDate()
         ).days()
       ) < 0
+    );
+  }
+
+  static timezone() {
+    LocalDateTime.parse(Constants.DATE_TIME_ISO).atZone(
+      ZoneId.of(Constants.TIMEZONE)
     );
   }
 };

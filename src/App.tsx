@@ -25,7 +25,7 @@ function App() {
     console.log({ momentStats });
   }, []);
 
-  return <div>LUXON</div>;
+  return <div>DateTime libraries - performance test</div>;
 }
 
 export default App;

@@ -3,15 +3,17 @@ import format from "date-fns/format";
 import add from "date-fns/add";
 import differenceInMonths from "date-fns/differenceInMonths";
 import differenceInDays from "date-fns/differenceInDays";
+import { zonedTimeToUtc } from "date-fns-tz";
 
 import { DateTimeService } from "./date-time-service";
+import * as Constants from "./constants";
 
-const DATE_TIME_INSTANCE = parseISO("2016-05-25T09:24:15");
-const ANOTHER_DATE_TIME_INSTANCE_ = parseISO("2017-08-22T15:23:00");
+const DATE_TIME_INSTANCE = parseISO(Constants.DATE_TIME_ISO);
+const ANOTHER_DATE_TIME_INSTANCE_ = parseISO(Constants.ANOTHER_DATE_TIME_ISO);
 
 export const DateFnsService: DateTimeService = class {
   static parseISO() {
-    parseISO("2016-05-25T09:24:15");
+    parseISO(Constants.DATE_TIME_ISO);
   }
 
   static formatInstance() {
@@ -27,6 +29,12 @@ export const DateFnsService: DateTimeService = class {
   }
 
   static compareInstances() {
-    return differenceInDays(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE_) < 0;
+    return (
+      differenceInDays(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE_) < 0
+    );
+  }
+
+  static timezone() {
+    zonedTimeToUtc(Constants.DATE_TIME_ISO, Constants.TIMEZONE);
   }
 };

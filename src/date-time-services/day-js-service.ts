@@ -1,13 +1,20 @@
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc"; // dependent on utc plugin
+import timezone from "dayjs/plugin/timezone";
 
 import { DateTimeService } from "./date-time-service";
+import * as Constants from "./constants";
 
-const DATE_TIME_INSTANCE = dayjs("2016-05-25T09:24:15");
-const ANOTHER_DATE_TIME_INSTANCE_ = dayjs("2017-08-22T15:23:00");
+// Registers dayJs plugins
+dayjs.extend(timezone);
+dayjs.extend(utc);
+
+const DATE_TIME_INSTANCE = dayjs(Constants.DATE_TIME_ISO);
+const ANOTHER_DATE_TIME_INSTANCE_ = dayjs(Constants.ANOTHER_DATE_TIME_ISO);
 
 export const DayJsService: DateTimeService = class {
   static parseISO() {
-    dayjs("2016-05-25T09:24:15");
+    dayjs(Constants.DATE_TIME_ISO);
   }
 
   static formatInstance() {
@@ -24,5 +31,9 @@ export const DayJsService: DateTimeService = class {
 
   static compareInstances() {
     return DATE_TIME_INSTANCE.isBefore(ANOTHER_DATE_TIME_INSTANCE_, "day");
+  }
+
+  static timezone() {
+    dayjs(Constants.DATE_TIME_ISO).tz(Constants.TIMEZONE);
   }
 };

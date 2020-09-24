@@ -1,13 +1,16 @@
 import { DateTime } from "luxon";
 
 import { DateTimeService } from "./date-time-service";
+import * as Constants from "./constants";
 
-const DATE_TIME_INSTANCE = DateTime.fromISO("2016-05-25T09:24:15");
-const ANOTHER_DATE_TIME_INSTANCE_ = DateTime.fromISO("2017-08-22T15:23:00");
+const DATE_TIME_INSTANCE = DateTime.fromISO(Constants.DATE_TIME_ISO);
+const ANOTHER_DATE_TIME_INSTANCE_ = DateTime.fromISO(
+  Constants.ANOTHER_DATE_TIME_ISO
+);
 
 export const LuxonService: DateTimeService = class {
   static parseISO() {
-    DateTime.fromISO("2016-05-25T09:24:15");
+    DateTime.fromISO(Constants.DATE_TIME_ISO);
   }
 
   static formatInstance() {
@@ -27,5 +30,9 @@ export const LuxonService: DateTimeService = class {
       DATE_TIME_INSTANCE.startOf("day") <
       ANOTHER_DATE_TIME_INSTANCE_.startOf("day")
     );
+  }
+
+  static timezone() {
+    DateTime.fromISO(Constants.DATE_TIME_ISO).setZone(Constants.TIMEZONE);
   }
 };

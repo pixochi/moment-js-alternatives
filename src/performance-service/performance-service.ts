@@ -2,7 +2,7 @@ import { DateTimeService } from "../date-time-services/date-time-service";
 import { getMedian } from "./helpers";
 
 const MEASURES_COUNT = 5;
-const OPERATION_COUNT = 100_000;
+const OPERATION_COUNT = 100;
 
 /*
 |---------------------------------------------------------------------------------
@@ -60,5 +60,6 @@ export const dateTimeServiceStats = (
       dateTimeService.diffBetweenInstances
     ),
     compareInstances: medianOfOperation(dateTimeService.compareInstances),
+    timezone: medianOfOperation(dateTimeService.timezone),
   };
 };
