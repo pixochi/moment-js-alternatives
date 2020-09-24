@@ -1,4 +1,4 @@
-import { DateTimeService } from "./date-time-service";
+import { DateTimeService } from "../date-time-services/date-time-service";
 import { getMedian } from "./helpers";
 
 const MEASURES_COUNT = 5;

@@ -1,11 +1,11 @@
 import React from "react";
 
 import { dateTimeServiceStats } from "./performance-service/performance-service";
-import { LuxonService } from "./performance-service/luxon-service";
-import { DateFnsService } from "./performance-service/date-fns-service";
-import { DayJsService } from "./performance-service/day-js-service";
-import { JsJodaService } from "./performance-service/js-joda-service";
-import { MomentService } from "./performance-service/moment-service";
+import { LuxonService } from "./date-time-services/luxon-service";
+import { DateFnsService } from "./date-time-services/date-fns-service";
+import { DayJsService } from "./date-time-services/day-js-service";
+import { JsJodaService } from "./date-time-services/js-joda-service";
+import { MomentService } from "./date-time-services/moment-service";
 
 function App() {
   React.useEffect(() => {
