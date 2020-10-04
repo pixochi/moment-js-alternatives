@@ -1,7 +1,9 @@
 ## Best Moment.js Alternatives
 
 Compares modern date and time libraries that can be used to replace Moment.js.
-Includes code examples for Luxon, Day.js, date-fns and js-joda.
+Includes code examples for Luxon, Day.js, date-fns and js-joda.<br />
+
+More detailed comparison of the date and time libraries: https://medium.com/@kozak.jakub55/best-moment-js-alternatives-5dfa6861a1eb
 
 ### Available Scripts
 
