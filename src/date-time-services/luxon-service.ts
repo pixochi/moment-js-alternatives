@@ -4,7 +4,7 @@ import { DateTimeService } from "./date-time-service";
 import * as Constants from "./constants";
 
 const DATE_TIME_INSTANCE = DateTime.fromISO(Constants.DATE_TIME_ISO);
-const ANOTHER_DATE_TIME_INSTANCE_ = DateTime.fromISO(
+const ANOTHER_DATE_TIME_INSTANCE = DateTime.fromISO(
   Constants.ANOTHER_DATE_TIME_ISO
 );
 
@@ -22,13 +22,13 @@ export const LuxonService: DateTimeService = class {
   }
 
   static diffBetweenInstances() {
-    DATE_TIME_INSTANCE.diff(ANOTHER_DATE_TIME_INSTANCE_, "months").toObject();
+    DATE_TIME_INSTANCE.diff(ANOTHER_DATE_TIME_INSTANCE, "months").toObject();
   }
 
   static compareInstances() {
     return (
       DATE_TIME_INSTANCE.startOf("day") <
-      ANOTHER_DATE_TIME_INSTANCE_.startOf("day")
+      ANOTHER_DATE_TIME_INSTANCE.startOf("day")
     );
   }
 
