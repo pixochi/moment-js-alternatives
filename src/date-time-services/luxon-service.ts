@@ -1,4 +1,4 @@
-import luxon, { DateTime, Settings } from "luxon";
+import { DateTime, Settings } from "luxon";
 
 import { DateTimeService } from "./date-time-service";
 import * as Constants from "./constants";
