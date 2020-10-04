@@ -9,7 +9,7 @@ import { DateTimeService } from "./date-time-service";
 import * as Constants from "./constants";
 
 const DATE_TIME_INSTANCE = parseISO(Constants.DATE_TIME_ISO);
-const ANOTHER_DATE_TIME_INSTANCE_ = parseISO(Constants.ANOTHER_DATE_TIME_ISO);
+const ANOTHER_DATE_TIME_INSTANCE = parseISO(Constants.ANOTHER_DATE_TIME_ISO);
 
 export const DateFnsService: DateTimeService = class {
   static parseISO() {
@@ -25,13 +25,11 @@ export const DateFnsService: DateTimeService = class {
   }
 
   static diffBetweenInstances() {
-    differenceInMonths(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE_);
+    differenceInMonths(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE);
   }
 
   static compareInstances() {
-    return (
-      differenceInDays(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE_) < 0
-    );
+    return differenceInDays(DATE_TIME_INSTANCE, ANOTHER_DATE_TIME_INSTANCE) < 0;
   }
 
   static timezone() {
