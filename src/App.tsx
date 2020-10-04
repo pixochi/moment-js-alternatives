@@ -25,7 +25,11 @@ function App() {
     console.log({ momentStats });
   }, []);
 
-  return <div>DateTime libraries - performance test</div>;
+  return (
+    <div>
+      DateTime libraries - see performance test results in DevTools(Console)
+    </div>
+  );
 }
 
 export default App;
